@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Weather reports</h1>
+
+<div id="weather_reports">
+  <% @weather_reports.each do |weather_report| %>
+    <%= render weather_report %>
+    <p>
+      <%= link_to "Show this weather report", weather_report %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New weather report", new_weather_report_path %>

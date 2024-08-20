@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @weather_report %>
+
+<div>
+  <%= link_to "Edit this weather report", edit_weather_report_path(@weather_report) %> |
+  <%= link_to "Back to weather reports", weather_reports_path %>
+
+  <%= button_to "Destroy this weather report", @weather_report, method: :delete %>
+</div>
