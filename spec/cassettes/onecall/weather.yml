@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=41b691920bf5a3c15aceb4c8d32b904d&exclude=minutely,hourly&lat=37.7749&lon=-122.4194&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 20 Aug 2024 22:20:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '4839'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=37.77&lon=-122.42&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":37.7749,"lon":-122.4194,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1724192415,"sunrise":1724160610,"sunset":1724208961,"temp":71.83,"feels_like":71.26,"pressure":1017,"humidity":54,"dew_point":54.3,"uvi":6.59,"clouds":20,"visibility":10000,"wind_speed":19.57,"wind_deg":280,"wind_gust":28.77,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}]},"daily":[{"dt":1724184000,"sunrise":1724160610,"sunset":1724208961,"moonrise":1724212140,"moonset":1724164080,"moon_phase":0.54,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":69.62,"min":56.97,"max":71.83,"night":59.29,"eve":64.31,"morn":56.97},"feels_like":{"day":68.92,"night":58.59,"eve":63.59,"morn":56.17},"pressure":1017,"humidity":56,"dew_point":53.24,"wind_speed":14.63,"wind_deg":270,"wind_gust":20.89,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":12,"pop":0,"uvi":8.62},{"dt":1724270400,"sunrise":1724247062,"sunset":1724295280,"moonrise":1724300160,"moonset":1724254980,"moon_phase":0.58,"summary":"The
+        day will start with clear sky through the late morning hours, transitioning
+        to partly cloudy","temp":{"day":62.73,"min":57.31,"max":62.96,"night":58.5,"eve":60.22,"morn":57.36},"feels_like":{"day":62.08,"night":58.32,"eve":60.04,"morn":57.07},"pressure":1017,"humidity":72,"dew_point":53.06,"wind_speed":16.04,"wind_deg":272,"wind_gust":22.35,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":19,"pop":0,"uvi":8.04},{"dt":1724356800,"sunrise":1724333514,"sunset":1724381598,"moonrise":1724388180,"moonset":1724345880,"moon_phase":0.62,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":63.86,"min":57.6,"max":64.29,"night":58.23,"eve":61.03,"morn":58.12},"feels_like":{"day":63.23,"night":57.83,"eve":60.78,"morn":57.76},"pressure":1015,"humidity":70,"dew_point":53.74,"wind_speed":16.89,"wind_deg":260,"wind_gust":23.4,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":7.95},{"dt":1724443200,"sunrise":1724419966,"sunset":1724467916,"moonrise":1724476320,"moonset":1724436720,"moon_phase":0.66,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":61.66,"min":56.64,"max":61.66,"night":58.66,"eve":59.56,"morn":56.71},"feels_like":{"day":61.02,"night":58.35,"eve":59.11,"morn":56.17},"pressure":1016,"humidity":74,"dew_point":53.17,"wind_speed":11.5,"wind_deg":234,"wind_gust":17.43,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":5.58},{"dt":1724529600,"sunrise":1724506417,"sunset":1724554232,"moonrise":1724564640,"moonset":1724527560,"moon_phase":0.69,"summary":"The
+        day will start with partly cloudy through the late morning hours, transitioning
+        to clearing","temp":{"day":64.99,"min":57.78,"max":64.99,"night":58.51,"eve":60.37,"morn":58.73},"feels_like":{"day":64.44,"night":58.1,"eve":60.01,"morn":58.24},"pressure":1018,"humidity":69,"dew_point":54.25,"wind_speed":13.62,"wind_deg":275,"wind_gust":17.47,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":7.99},{"dt":1724616000,"sunrise":1724592869,"sunset":1724640548,"moonrise":1724653380,"moonset":1724618400,"moon_phase":0.73,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":68.04,"min":57.2,"max":68.04,"night":58.98,"eve":62.6,"morn":58.87},"feels_like":{"day":67.17,"night":58.24,"eve":61.61,"morn":58.17},"pressure":1017,"humidity":56,"dew_point":50.88,"wind_speed":9.91,"wind_deg":262,"wind_gust":13.29,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":9,"pop":0,"uvi":8},{"dt":1724702400,"sunrise":1724679320,"sunset":1724726863,"moonrise":0,"moonset":1724709060,"moon_phase":0.75,"summary":"You
+        can expect partly cloudy in the morning, with clearing in the afternoon","temp":{"day":67.98,"min":56.98,"max":67.98,"night":59.94,"eve":61.5,"morn":58.87},"feels_like":{"day":67.21,"night":59.43,"eve":60.78,"morn":58.32},"pressure":1017,"humidity":58,"dew_point":51.33,"wind_speed":9.42,"wind_deg":257,"wind_gust":11.95,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"clouds":25,"pop":0,"uvi":8},{"dt":1724788800,"sunrise":1724765771,"sunset":1724813177,"moonrise":1724742420,"moonset":1724799420,"moon_phase":0.8,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":66.81,"min":56.57,"max":66.81,"night":60.76,"eve":61.83,"morn":57.85},"feels_like":{"day":66.11,"night":60.35,"eve":61.23,"morn":57.15},"pressure":1015,"humidity":62,"dew_point":52.29,"wind_speed":10.92,"wind_deg":249,"wind_gust":15.03,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":12,"pop":0,"uvi":8}]}'
+  recorded_at: Tue, 20 Aug 2024 22:20:15 GMT
+recorded_with: VCR 6.3.1

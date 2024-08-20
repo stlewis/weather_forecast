@@ -52,4 +52,6 @@ end
 
 group :test do
   gem 'shoulda-matchers', '~> 6.0'
+  gem 'vcr'
+  gem 'webmock'
 end
