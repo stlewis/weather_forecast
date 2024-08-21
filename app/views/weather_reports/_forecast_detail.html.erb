@@ -1,0 +1,62 @@
+<div style='display: none;' class='forecast-detail'>
+  <div class='card mt-4 self-align-center col-md-8 offset-md-1'>
+    <div class='card-body'>
+      <div class='card-title'>
+        <h5> Weather On <%= forecast.date.strftime('%a %b %d') %></h5>
+      </div>
+      <div class='card-text'>
+        <div class='row'>
+          <div class='col-md-6'>
+            <div class='row'>
+              <div class='col'>
+                <strong>Morning Temperature:</strong> <%= forecast.morn_temp %>&deg; (Feels Like <%= forecast.morn_feels %>&deg;)
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col'>
+                <strong>Evening Temperature:</strong> <%= forecast.eve_temp %>&deg; (Feels Like <%= forecast.eve_feels %>&deg;)
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col'>
+                <strong>Night Temperature:</strong> <%= forecast.night_temp %>&deg; (Feels Like <%= forecast.night_feels %>&deg;)
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col'>
+                <strong>UV Index:</strong> <%= forecast.uv_index %>
+              </div>
+            </div>
+          </div>
+
+          <div class='col-md-6'>
+            <div class='row'>
+              <div class='col'>
+                <strong>Humidity:</strong> <%= forecast.humidity %>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col'>
+                <strong>Wind:</strong> <%= forecast.wind_speed %> mph out of the <%= forecast.wind_direction %>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='col'>
+                <strong>Sunrise:</strong> <%= forecast.sunrise %>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col'>
+                <strong>Sunset:</strong> <%= forecast.sunset %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='card-footer'>
+        <a href='#' id="hide_detail" data-action='click->forecast#hideDetail'>Hide This</a>
+      </div>
+    </div>
+  </div>
+</div>

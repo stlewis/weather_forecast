@@ -1,0 +1,18 @@
+<div class='col-md-2'>
+  <div id='forecast_card_<%= idx %>' class='card h-100' data-controller='forecast'>
+    <div class='card-body'>
+      <div class='card-title'>
+        <h5><%= forecast.date.strftime('%a %b %d') %></h5>
+      </div>
+      <div class='card-text'>
+        <p><strong>High:</strong> <%= forecast.max_temp %>&deg;</p>
+        <p><strong>Low:</strong> <%= forecast.min_temp %>&deg;</p>
+        <p><%= forecast.summary %></p>
+        <%= render partial: 'forecast_detail', locals: { forecast: forecast } %>
+      </div>
+    </div>
+    <div class='card-footer'>
+      <a href='#' id="trigger_detail_<%= idx %>" data-action='click->forecast#showDetail'>Details</a>
+    </div>
+  </div>
+</div>

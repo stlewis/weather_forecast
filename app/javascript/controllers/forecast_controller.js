@@ -9,4 +9,11 @@ export default class extends Controller {
 
     e.preventDefault()
   }
+
+  hideDetail(e){
+    let detailDisplayElement = document.querySelector('#forecast-detail')
+    detailDisplayElement.innerHTML = ''
+
+    e.preventDefault
+  }
 }
