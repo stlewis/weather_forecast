@@ -10,10 +10,9 @@ class WeatherReportsController < ApplicationController
       state: params[:state]
     }
 
-    raise ActionController::ParameterMissing.new("street") unless params[:street].present?
-    raise ActionController::ParameterMissing.new("city") unless params[:city].present?
-    raise ActionController::ParameterMissing.new("state") unless params[:city].present?
-
+    raise ActionController::ParameterMissing.new('street') unless params[:street].present?
+    raise ActionController::ParameterMissing.new('city') unless params[:city].present?
+    raise ActionController::ParameterMissing.new('state') unless params[:city].present?
 
     address_params[:zip_code] = params[:zip_code] if params[:zip_code].present?
 
@@ -28,9 +27,10 @@ class WeatherReportsController < ApplicationController
 
     @current_weather = weather_report[:current_weather]
     @daily_forecasts = weather_report[:forecast]
-
   rescue ActionController::ParameterMissing => e
     flash[:error] = "#{e.message}. Please provide a valid address"
     redirect_to new_weather_report_path
+  rescue AddressValidation::Api::Error, OpenWeather::Api::Error => e
+    flash[:error] = e.message
   end
 end

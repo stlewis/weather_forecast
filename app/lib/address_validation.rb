@@ -17,7 +17,9 @@ module AddressValidation
 
     def standardize_address(address:)
       response = AddressValidation::Api::Base.new.validate_address(address)
-      struct_from_response(response)
+      return struct_from_response(response) if response.code.between?(200, 299)
+
+      raise AddressValidation::Api::Error, response['error']['message']
     end
 
     private
