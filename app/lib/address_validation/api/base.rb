@@ -25,7 +25,10 @@ module AddressValidation
                                    query: { key: AddressValidation.configuration.api_key },
                                    body: { address: address_object }.to_json,
                                    headers: default_headers)
-        response.parsed_response
+
+        return response.parsed_response if response.code.between?(200, 299)
+
+        raise AddressValidation::Api::Error, response['error']['message'] if response.code != 200
       end
 
       private

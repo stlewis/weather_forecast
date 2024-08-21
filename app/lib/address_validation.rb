@@ -4,6 +4,8 @@ require_relative 'address_validation/configuration'
 
 # Module containing mechanisms to access the OpenWeather APIs.
 module AddressValidation
+  class ParseError < StandardError; end
+
   class << self
     attr_writer :configuration
 
@@ -17,9 +19,7 @@ module AddressValidation
 
     def standardize_address(address:)
       response = AddressValidation::Api::Base.new.validate_address(address)
-      return struct_from_response(response) if response.code.between?(200, 299)
-
-      raise AddressValidation::Api::Error, response['error']['message']
+      struct_from_response(response)
     end
 
     private
@@ -27,16 +27,22 @@ module AddressValidation
     def struct_from_response(response)
       address_data = response['result']['address']['postalAddress']
 
+      raise ParseError, 'Could not parse address data' if address_data.nil?
+
       street = address_data['addressLines'].first
       city = address_data['locality']
       state = address_data['administrativeArea']
-      zip_code = address_data['postalCode'].split('-').first
+      zip_code = address_data['postalCode']
+
+      if street.nil? || city.nil? || state.nil? || zip_code.nil?
+        raise ParseError, 'Could not parse address data'
+      end
 
       OpenStruct.new(
         street: street,
         city: city,
         state: state,
-        zip_code: zip_code
+        zip_code: zip_code.split('-').first,
       )
     end
   end
