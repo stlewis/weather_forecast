@@ -20,9 +20,9 @@ module OpenWeather
 
     def summary
       <<~SUMMARY
-        It is #{@date.strftime('%a %b %d')}. The current temperature is #{@temperature}°F, but it feels like #{@feels_like}°F.
-      The humidity is #{@humidity}% and the wind speed is #{@wind_speed} mph out of the #{wind_direction}. The current UV index is #{@uv_index}.
-      Sunrise is at #{@sunrise} and sunset is at #{@sunset}.
+          It is #{@date.strftime('%a %b %d')}. The current temperature is #{@temperature}°F. It feels like #{@feels_like}°F.
+        The humidity is #{@humidity}% and the wind speed is #{@wind_speed} mph out of the #{wind_direction}. The current UV index is #{@uv_index}.
+        Sunrise is at #{@sunrise} and sunset is at #{@sunset}.
       SUMMARY
     end
   end

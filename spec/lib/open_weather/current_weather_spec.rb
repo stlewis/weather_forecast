@@ -48,7 +48,7 @@ RSpec.describe OpenWeather::CurrentWeather do
     it 'returns a summary of the current weather' do
       raw_data = current_weather.raw_data
       expected_summary = <<~SUMMARY
-          It is #{Time.at(raw_data['dt']).strftime('%a %b %d')}. The current temperature is #{raw_data['temp'].round}°F, but it feels like #{raw_data['feels_like'].round}°F.
+          It is #{Time.at(raw_data['dt']).strftime('%a %b %d')}. The current temperature is #{raw_data['temp'].round}°F. It feels like #{raw_data['feels_like'].round}°F.
         The humidity is #{raw_data['humidity']}% and the wind speed is #{raw_data['wind_speed']} mph out of the #{current_weather.wind_direction}. The current UV index is #{raw_data['uvi']}.
         Sunrise is at #{Time.at(raw_data['sunrise']).strftime('%H:%M')} and sunset is at #{Time.at(raw_data['sunset']).strftime('%H:%M')}.
       SUMMARY
