@@ -16,11 +16,12 @@ class WeatherReportsController < ApplicationController
 
     @cached_report = true
 
-    Rails.cache.fetch("weather_report_#{valid_address.zip_code}", expires_in: 30.minutes) do
+    weather_report = Rails.cache.fetch("weather_report_#{valid_address.zip_code}", expires_in: 30.minutes) do
       @cached_report = false
-      weather_report = OpenWeather.weather_for(zip_code: valid_address.zip_code)
-      @current_weather = weather_report[:current_weather]
-      @daily_forecasts = weather_report[:forecast]
+      OpenWeather.weather_for(zip_code: valid_address.zip_code)
     end
+
+    @current_weather = weather_report[:current_weather]
+    @daily_forecasts = weather_report[:forecast]
   end
 end

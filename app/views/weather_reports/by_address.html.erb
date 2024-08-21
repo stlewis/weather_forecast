@@ -1,12 +1,15 @@
 <div class='container'>
   <div class='row mt-4'>
     <div class='col-md-6 offset-md-3 align-self-center'>
-      <h2>Your Weather Report For <%= params[:city] %>, <%= params[:state] %> </h2>
+      <h3>Your Weather Report For <%= params[:city] %>, <%= params[:state] %> </h3>
+      <p>
+        <%= link_to 'New Weather Report', root_path, class: 'btn btn-primary' %>
+      </p>
 
       <div class='card'>
         <div class='card-body'>
           <div class='card-title'>
-            <h4>Right Now</h4>
+            <h4>Right Now <% if @cached_report %>*<% end %></h4>
           </div>
           <div class='card-text'>
             <p><%= @current_weather.summary %></p>
@@ -104,5 +107,12 @@
     </div>
     <div id='forecast-detail' class='container'>
     </div>
+    <% if @cached_report %>
+      <div class='row mt-4'>
+        <div class='col align-self-center'>
+          <p>* This report was cached and may as much as 30 minutes out of date.</p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

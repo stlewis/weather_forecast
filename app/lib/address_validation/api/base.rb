@@ -8,7 +8,7 @@ module AddressValidation
       base_uri 'https://addressvalidation.googleapis.com/v1:validateAddress'
 
       def validate_address(address)
-        street_address = address[:street] || 'Unknown'
+        street_address = address[:street].presence || 'Unknown'
 
         address_object = {
           regionCode: AddressValidation.configuration.region_code,
