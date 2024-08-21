@@ -59,7 +59,7 @@ RSpec.describe OpenWeather do
     let(:forecast) { weather_data['daily'].map { |day| OpenWeather::Forecast.new(day) } }
 
     before do
-      allow(OpenWeather::Api::Geocoding).to receive_message_chain(:new, :by_zip).and_return(geo_data)
+      allow(OpenWeather::Api::Geocoding).to receive_message_chain(:new, :by_zip_code).and_return(geo_data)
       allow(OpenWeather::Api::Onecall).to receive_message_chain(:new, :weather).and_return(weather_data)
       allow(OpenWeather::CurrentWeather).to receive(:new).and_return(current_weather)
       allow(OpenWeather::Forecast).to receive(:new).and_return(forecast)
@@ -73,7 +73,7 @@ RSpec.describe OpenWeather do
 
     context 'given a bad zip code' do
       before do
-        allow(OpenWeather::Api::Geocoding).to receive_message_chain(:new, :by_zip).and_raise(OpenWeather::Api::Error)
+        allow(OpenWeather::Api::Geocoding).to receive_message_chain(:new, :by_zip_code).and_raise(OpenWeather::Api::Error)
       end
 
       it 'raises an error' do
