@@ -6,8 +6,8 @@ module OpenWeather
     class Geocoding < Base
       base_uri 'https://api.openweathermap.org/geo/1.0'
 
-      def by_zip(zip:)
-        options = { query: { zip: zip, appid: OpenWeather.configuration.api_key } }
+      def by_zip_code(zip_code:)
+        options = { query: { zip: zip_code, appid: OpenWeather.configuration.api_key } }
         response = self.class.get('/zip', options)
 
         return response.parsed_response if response.code.between?(200, 299)

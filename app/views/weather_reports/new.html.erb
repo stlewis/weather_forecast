@@ -4,8 +4,16 @@
       <div class='card'>
         <div class='card-body'>
           <h3 class='text-center'>New Weather Report</h3>
-          <p>Enter the city, state, and zip code for the weather report you would like to see.</p>
+          <p>Enter the address for the weather report you would like to see.</p>
           <%= form_with url: by_address_weather_reports_path, method: :get do |form| %>
+            <div class='row'>
+              <div class='col'>
+                <div class='form-group'>
+                  <%= form.label :street %>
+                  <%= form.text_field :street, class: 'form-control' %>
+                </div>
+              </div>
+            </div>
             <div class='row'>
               <div class='col'>
                 <div class='form-group'>
@@ -14,16 +22,28 @@
                 </div>
               </div>
             </div>
-            <div class='form-group'>
-              <%= form.label :state %>
-              <%= form.select :state, us_states, {}, { class: 'form-select' } %>
+            <div class='row'>
+              <div class='col'>
+                <div class='form-group'>
+                  <%= form.label :state %>
+                  <%= form.select :state, us_states, {}, { class: 'form-select' } %>
+                </div>
+              </div>
             </div>
-            <div class='form-group'>
-              <%= form.label :zip %>
-              <%= form.text_field :zip, class: 'form-control' %>
+            <div class='row'>
+              <div class='col'>
+                <div class='form-group'>
+                  <%= form.label :zip %>
+                  <%= form.text_field :zip, class: 'form-control' %>
+                </div>
+              </div>
             </div>
-            <div class='form-group mt-2 offset-md-3'>
-              <%= form.submit 'Get Weather Report', class: 'btn btn-primary' %>
+            <div class='row'>
+              <div class='col'>
+                <div class='form-group mt-2 offset-md-3'>
+                  <%= form.submit 'Get Weather Report', class: 'btn btn-primary' %>
+                </div>
+              </div>
             </div>
           <% end %>
 

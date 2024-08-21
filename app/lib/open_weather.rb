@@ -16,7 +16,7 @@ module OpenWeather
     end
 
     def weather_for(zip_code:)
-      geo_data = OpenWeather::Api::Geocoding.new.by_zip(zip: zip_code)
+      geo_data = OpenWeather::Api::Geocoding.new.by_zip_code(zip_code: zip_code)
       weather_data = OpenWeather::Api::Onecall.new.weather(lat: geo_data['lat'], lon: geo_data['lon'])
       current_weather = OpenWeather::CurrentWeather.new(weather_data['current'])
       forecast = weather_data['daily'].map { |day| OpenWeather::Forecast.new(day) }
