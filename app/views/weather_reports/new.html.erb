@@ -5,6 +5,7 @@
         <div class='card-body'>
           <h3 class='text-center'>New Weather Report</h3>
           <p>Enter the address for the weather report you would like to see.</p>
+          <p class='text-danger'><%= flash[:error] %></p>
           <%= form_with url: by_address_weather_reports_path, method: :get do |form| %>
             <div class='row'>
               <div class='col'>
