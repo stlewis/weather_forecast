@@ -4,6 +4,8 @@ require_relative 'open_weather/configuration'
 
 # Module containing mechanisms to access the OpenWeather APIs.
 module OpenWeather
+  CACHE_EXPIRATION = 30.minutes
+
   class << self
     attr_writer :configuration
 
