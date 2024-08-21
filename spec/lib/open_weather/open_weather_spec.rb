@@ -22,6 +22,8 @@ RSpec.describe OpenWeather do
     let(:current_weather_data) do
       {
         'dt' => 1_632_000_000,
+        'sunrise' => 1_632_000_000,
+        'sunset' => 1_632_000_000,
         'temp' => 72.0,
         'feels_like' => 72.0,
         'humidity' => 50,
@@ -37,8 +39,10 @@ RSpec.describe OpenWeather do
     let(:forecast_data) do
       {
         'dt' => 1_632_000_000,
-        'temp' => { 'day' => 72.0 },
-        'feels_like' => { 'day' => 72.0 },
+        'sunrise' => 1_632_000_000,
+        'sunset' => 1_632_000_000,
+        'temp' => { 'day' => 72.0, 'min' => 50.0, 'max' => 80.0, 'night' => 60.0, 'eve' => 70.0, 'morn' => 55.0},
+        'feels_like' => { 'day' => 72.0, 'night' => 60.0, 'eve' => 70.0, 'morn' => 55.0 },
         'humidity' => 50,
         'dew_point' => 50.0,
         'uvi' => 5.0,

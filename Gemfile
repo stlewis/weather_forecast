@@ -36,6 +36,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'bootstrap', '~> 5.3.3'
+gem 'dartsass-sprockets'
 gem 'httparty'
 
 group :development, :test do
