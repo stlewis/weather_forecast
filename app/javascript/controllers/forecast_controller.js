@@ -14,6 +14,6 @@ export default class extends Controller {
     let detailDisplayElement = document.querySelector('#forecast-detail')
     detailDisplayElement.innerHTML = ''
 
-    e.preventDefault
+    e.preventDefault()
   }
 }
